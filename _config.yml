@@ -1,0 +1,4 @@
+# GitHub Pages builds this site with Jekyll. The pages are plain HTML and are published unchanged.
+# Files listed here stay in the repository but are not published on the website.
+exclude:
+  - README.md

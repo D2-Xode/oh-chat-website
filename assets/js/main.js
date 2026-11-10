@@ -1,4 +1,9 @@
-// Oh Chat website: the hero demo.
+// Oh Chat website. Everything on the page works without this file; it adds:
+//   1. the hero demo (one group chat as each member sees it),
+//   2. the header: a shadow once you scroll, and the menu button on small screens,
+//   3. a gentle fade-in for content further down the page.
+
+// 1. The hero demo.
 // One group chat, four members, four languages. Tapping a name shows that member's screen:
 // their own message on the right (as written), everyone else's translated into their language.
 (function () {
@@ -151,4 +156,79 @@
   var caption = status.textContent;
   show('john', false);
   status.textContent = caption;
+})();
+
+// 2. The header.
+(function () {
+  'use strict';
+
+  var header = document.getElementById('site-header');
+  if (!header) return;
+
+  function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Small screens: the menu button opens the navigation as a panel under the header.
+  var toggle = header.querySelector('.menu-toggle');
+  var nav = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+
+  function isOpen() { return toggle.getAttribute('aria-expanded') === 'true'; }
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('nav-open', open);
+  }
+
+  toggle.addEventListener('click', function () { setOpen(!isOpen()); });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', function (e) { if (isOpen() && !header.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
+  });
+  var wide = window.matchMedia('(min-width: 960px)');
+  if (wide.addEventListener) wide.addEventListener('change', function (e) { if (e.matches) setOpen(false); });
+})();
+
+// 3. Fade content in as it scrolls into view. Only content that starts below the fold is hidden first,
+// and nothing is hidden for visitors who prefer less motion, for old browsers, or for search engines.
+(function () {
+  'use strict';
+
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (/bot|crawl|spider|slurp|lighthouse|headlesschrome/i.test(navigator.userAgent)) return;
+
+  var targets = document.querySelectorAll(
+    '.section-head, .steps > li, .checks > li, .cards > .card, .langs, .journey > li, .scope, .tech, ' +
+    '.get-card, .faq, .final-inner'
+  );
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      observer.unobserve(el);
+      el.classList.add('is-visible');
+      el.addEventListener('transitionend', function done(e) {
+        if (e.target !== el) return;
+        el.removeEventListener('transitionend', done);
+        el.classList.remove('reveal-pending', 'is-visible');   // back to the normal styles (and hover effects)
+        el.style.transitionDelay = '';
+      });
+    });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+
+  // Measure everything first, then change classes: alternating the two would force a full page layout
+  // for every element (very slow on phones).
+  var fold = window.innerHeight;
+  var below = Array.prototype.filter.call(targets, function (el) {
+    return el.getBoundingClientRect().top >= fold;   // content already on screen is left alone
+  });
+  below.forEach(function (el) {
+    var index = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.transitionDelay = (index % 3) * 80 + 'ms';   // cards in a row arrive one after another
+    el.classList.add('reveal-pending');
+    observer.observe(el);
+  });
 })();

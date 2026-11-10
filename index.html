@@ -1,24 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oh Chat: write in your language, read in theirs</title>
-  <meta name="description" content="Oh Chat is a messenger that translates every message into each reader's language. Groups of up to 20 people, 40 languages, on the web and Android.">
+  <script>document.documentElement.className = 'js';</script>
+  <title>Oh Chat: the chat app that translates every message</title>
+  <meta name="description" content="Write in your language and everyone reads it in theirs. Oh Chat translates every message into 40 languages, with encrypted chats on the web and Android.">
+  <link rel="canonical" href="https://oh-chat.rocksontech.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#D9480F" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
 
-  <!-- Link previews (chat apps, social media) -->
+  <!-- Link previews (chat apps, social media). Image addresses must be full https:// URLs. -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Oh Chat">
+  <meta property="og:url" content="https://oh-chat.rocksontech.com/">
   <meta property="og:title" content="Oh Chat: write in your language, read in theirs">
-  <meta property="og:description" content="A messenger that translates every message into each reader's language.">
+  <meta property="og:description" content="The chat app that translates every message into each reader's language. 40 languages, groups of up to 20, encrypted messages, on the web and Android.">
+  <meta property="og:image" content="https://oh-chat.rocksontech.com/assets/img/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Oh Chat: the same message shown in English, Korean, Japanese and Spanish">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/app-icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/main.js" defer></script>
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- After changing the CSS or JavaScript, raise ?v= (here and in 404.html) so visitors don't keep an old copy. -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <script src="assets/js/main.js?v=2" defer></script>
+
+  <!-- For search engines: the site's name and logo. The FAQ is marked up where it appears, further down. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://oh-chat.rocksontech.com/#organization",
+        "name": "Oh Chat",
+        "url": "https://oh-chat.rocksontech.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://oh-chat.rocksontech.com/assets/img/logo-512.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://oh-chat.rocksontech.com/#website",
+        "name": "Oh Chat",
+        "url": "https://oh-chat.rocksontech.com/",
+        "description": "The chat app that translates every message into each reader's language.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://oh-chat.rocksontech.com/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!--
@@ -30,7 +74,7 @@
   -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Oh Chat, back to top">
         <picture>
@@ -39,26 +83,32 @@
         </picture>
         <span>Oh Chat</span>
       </a>
-      <nav class="main-nav" aria-label="Main">
+      <nav class="main-nav" id="main-nav" aria-label="Main">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#languages">Languages</a>
+        <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
+        <a class="nav-signin" href="https://chat.rocksontech.com/login">Sign in</a>
       </nav>
       <div class="header-actions">
         <a class="link-quiet hide-sm" href="https://chat.rocksontech.com/login">Sign in</a>
         <a class="btn btn-primary btn-sm" href="#get">Get Oh Chat</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="hero" id="top">
+    <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">A messenger with translation built in</p>
-          <h1>Write in your language. <span class="accent">Everyone reads it in theirs.</span></h1>
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>A messenger with translation built in</p>
+          <h1 id="hero-title">Write in your language. <span class="accent">Everyone reads it in theirs.</span></h1>
           <p class="lede">
             Oh Chat translates every message for each person in the chat. Your friend in Seoul reads Korean,
             your teammate in Madrid reads Spanish, and you just type the way you talk.
@@ -66,7 +116,7 @@
           <div class="cta-row">
             <a class="btn btn-primary btn-lg" href="https://chat.rocksontech.com/signup">
               Join Oh Chat
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
             <a class="btn btn-secondary btn-lg" href="https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk" download>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
@@ -76,6 +126,10 @@
           <p class="cta-note">
             Invite-only for now: sign up with the code you were given.
             Already a member? <a href="https://chat.rocksontech.com/login">Sign in</a>
+          </p>
+          <p class="hero-secure">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <span>Every message is encrypted, on the way and at rest. <a href="#security">See how</a></span>
           </p>
         </div>
 
@@ -88,28 +142,47 @@
             <button type="button" data-viewer="lucia" aria-pressed="false"><span class="sw-name">Lucía</span><span class="sw-lang" lang="es">Español</span></button>
           </div>
 
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="chat-head">
-                <svg class="icon chat-back" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-                <span class="avatar avatar-group" aria-hidden="true">WT</span>
-                <div>
-                  <p class="chat-title">Weekend trip</p>
-                  <p class="chat-sub">4 members</p>
+          <div class="phone-wrap">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="status-bar" aria-hidden="true">
+                  <span class="status-time">20:16</span>
+                  <span class="island"></span>
+                  <span class="status-icons">
+                    <svg class="sb-icon" viewBox="0 0 18 12" width="17" height="11"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                    <svg class="sb-icon sb-stroke" viewBox="0 0 16 12" width="15" height="11"><path d="M1.5 4.6a9.5 9.5 0 0 1 13 0M4 7.3a6 6 0 0 1 8 0M6.6 10a2.2 2.2 0 0 1 2.8 0"/></svg>
+                    <svg class="sb-icon" viewBox="0 0 27 12" width="25" height="11"><rect x=".75" y=".75" width="22" height="10.5" rx="3" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2"/><rect x="2.6" y="2.6" width="15" height="6.8" rx="1.6"/><path d="M24.4 4.2v3.6c.9-.3 1.5-1 1.5-1.8s-.6-1.5-1.5-1.8z" fill-opacity=".45"/></svg>
+                  </span>
+                </div>
+                <div class="chat-head">
+                  <svg class="icon chat-back" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                  <span class="avatar avatar-group" aria-hidden="true">WT</span>
+                  <div>
+                    <p class="chat-title">Weekend trip</p>
+                    <p class="chat-sub">4 members</p>
+                  </div>
+                </div>
+                <ol class="chat-body" id="chat-body" aria-label="Messages">
+                  <!-- Filled in by main.js. Without JavaScript, John's view (English) shows. -->
+                  <li class="msg theirs"><span class="avatar" data-c="1" aria-hidden="true">M</span><div class="bubble-wrap"><p class="sender">Minji</p><div class="bubble"><p>Anyone up for Busan this weekend? 🌊</p></div><p class="meta">Translated from Korean</p></div></li>
+                  <li class="msg theirs"><span class="avatar" data-c="2" aria-hidden="true">K</span><div class="bubble-wrap"><p class="sender">Kenji</p><div class="bubble"><p>I'd love to! How about Saturday morning?</p></div><p class="meta">Translated from Japanese</p></div></li>
+                  <li class="msg theirs"><span class="avatar" data-c="3" aria-hidden="true">L</span><div class="bubble-wrap"><p class="sender">Lucía</p><div class="bubble"><p>Me too! I'll bring the camera 📷</p></div><p class="meta">Translated from Spanish</p></div></li>
+                  <li class="msg mine"><div class="bubble-wrap"><div class="bubble"><p>Count me in. Meet at the station at 9?</p></div><p class="meta">20:16 · Read</p></div></li>
+                </ol>
+                <div class="composer" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M20.5 11.5l-8.2 8.2a5 5 0 0 1-7.1-7.1l8.6-8.6a3.4 3.4 0 0 1 4.8 4.8l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/></svg>
+                  <span class="composer-input">Message</span>
+                  <span class="composer-send"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
                 </div>
               </div>
-              <ol class="chat-body" id="chat-body" aria-label="Messages">
-                <!-- Filled in by main.js. Without JavaScript, John's view (English) shows. -->
-                <li class="msg theirs"><span class="avatar" data-c="1" aria-hidden="true">M</span><div class="bubble-wrap"><p class="sender">Minji</p><div class="bubble"><p>Anyone up for Busan this weekend? 🌊</p></div><p class="meta">Translated from Korean</p></div></li>
-                <li class="msg theirs"><span class="avatar" data-c="2" aria-hidden="true">K</span><div class="bubble-wrap"><p class="sender">Kenji</p><div class="bubble"><p>I'd love to! How about Saturday morning?</p></div><p class="meta">Translated from Japanese</p></div></li>
-                <li class="msg theirs"><span class="avatar" data-c="3" aria-hidden="true">L</span><div class="bubble-wrap"><p class="sender">Lucía</p><div class="bubble"><p>Me too! I'll bring the camera 📷</p></div><p class="meta">Translated from Spanish</p></div></li>
-                <li class="msg mine"><div class="bubble-wrap"><div class="bubble"><p>Count me in. Meet at the station at 9?</p></div><p class="meta">20:16 · Read</p></div></li>
-              </ol>
-              <div class="composer" aria-hidden="true">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M20.5 11.5l-8.2 8.2a5 5 0 0 1-7.1-7.1l8.6-8.6a3.4 3.4 0 0 1 4.8 4.8l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/></svg>
-                <span class="composer-input">Message</span>
-                <span class="composer-send"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-              </div>
+            </div>
+            <div class="float-chip chip-secure" aria-hidden="true">
+              <span class="chip-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
+              <span><strong>Encrypted</strong><small>in transit and at rest</small></span>
+            </div>
+            <div class="float-chip chip-lang" aria-hidden="true">
+              <span class="chip-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h8M8 3v2M5.5 5c.8 3 2.9 5.4 5.5 6.5M10.5 5C9.7 8.3 7.4 10.9 4 12"/><path d="M12.5 20l3.75-9 3.75 9M13.9 17h4.7"/></svg></span>
+              <span><strong>40 languages</strong><small>any mix in one chat</small></span>
             </div>
           </div>
           <p class="demo-caption" id="demo-status" aria-live="polite">One chat, four languages. Tap a name to see that person's screen.</p>
@@ -119,20 +192,22 @@
 
     <!-- ============ QUICK FACTS ============ -->
     <section class="facts" aria-label="Oh Chat at a glance">
-      <div class="container facts-grid">
-        <div><p class="fact-num">40</p><p class="fact-label">languages</p></div>
-        <div><p class="fact-num">20</p><p class="fact-label">people per group, each in their own language</p></div>
-        <div><p class="fact-num">1 tap</p><p class="fact-label">to see the original words</p></div>
-        <div><p class="fact-num">Web + Android</p><p class="fact-label">your chats on every device</p></div>
+      <div class="container">
+        <ul class="facts-grid">
+          <li><p class="fact-num">40</p><p class="fact-label">languages, in any mix</p></li>
+          <li><p class="fact-num">20</p><p class="fact-label">people per group, each in their own language</p></li>
+          <li><p class="fact-num">AES-256</p><p class="fact-label">encryption for stored messages and files</p></li>
+          <li><p class="fact-num">Web + Android</p><p class="fact-label">your chats on every device</p></li>
+        </ul>
       </div>
     </section>
 
     <!-- ============ HOW IT WORKS ============ -->
-    <section class="section" id="how">
+    <section class="section" id="how" aria-labelledby="how-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">How it works</p>
-          <h2>Talk like you share a language</h2>
+          <h2 id="how-title">Talk like you share a language</h2>
         </div>
         <ol class="steps">
           <li>
@@ -155,11 +230,11 @@
     </section>
 
     <!-- ============ TRANSLATION QUALITY ============ -->
-    <section class="section section-tint">
+    <section class="section section-tint" aria-labelledby="translation-title">
       <div class="container split">
         <div class="section-head left">
           <p class="eyebrow">Translation</p>
-          <h2>Translation that reads like a person wrote it</h2>
+          <h2 id="translation-title">Translation that reads like a person wrote it</h2>
           <p class="section-lede">
             Oh Chat doesn't translate word by word. It reads the conversation so replies make sense,
             and it keeps the tone friendly.
@@ -187,11 +262,11 @@
     </section>
 
     <!-- ============ FEATURES ============ -->
-    <section class="section" id="features">
+    <section class="section" id="features" aria-labelledby="features-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Features</p>
-          <h2>Everything you expect from a messenger</h2>
+          <h2 id="features-title">Everything you expect from a messenger</h2>
         </div>
         <div class="cards">
           <article class="card">
@@ -229,96 +304,181 @@
     </section>
 
     <!-- ============ LANGUAGES ============ -->
-    <section class="section section-tint" id="languages">
+    <section class="section section-tint" id="languages" aria-labelledby="languages-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Languages</p>
-          <h2>40 languages, any mix in one chat</h2>
+          <h2 id="languages-title">40 languages, any mix in one chat</h2>
           <p class="section-lede">Every member picks their own. A Thai speaker, a German speaker and a Filipino speaker can share one group.</p>
         </div>
         <ul class="langs">
-          <li lang="en">English</li>
-          <li lang="ko" title="Korean">한국어</li>
-          <li lang="ja" title="Japanese">日本語</li>
-          <li lang="zh-Hans" title="Simplified Chinese">简体中文</li>
-          <li lang="zh-Hant" title="Traditional Chinese">繁體中文</li>
-          <li lang="th" title="Thai">ไทย</li>
-          <li lang="vi" title="Vietnamese">Tiếng Việt</li>
-          <li lang="id" title="Indonesian">Bahasa Indonesia</li>
-          <li lang="ms" title="Malay">Bahasa Melayu</li>
-          <li lang="tl" title="Filipino (Tagalog)">Filipino</li>
-          <li lang="km" title="Khmer">ខ្មែរ</li>
-          <li lang="my" title="Burmese">မြန်မာ</li>
-          <li lang="lo" title="Lao">ລາວ</li>
-          <li lang="mn" title="Mongolian">Монгол</li>
-          <li lang="hi" title="Hindi">हिन्दी</li>
-          <li lang="bn" title="Bengali">বাংলা</li>
-          <li lang="ur" title="Urdu" dir="rtl">اردو</li>
-          <li lang="ne" title="Nepali">नेपाली</li>
-          <li lang="ta" title="Tamil">தமிழ்</li>
-          <li lang="ar" title="Arabic" dir="rtl">العربية</li>
-          <li lang="fa" title="Persian" dir="rtl">فارسی</li>
-          <li lang="he" title="Hebrew" dir="rtl">עברית</li>
-          <li lang="tr" title="Turkish">Türkçe</li>
-          <li lang="ru" title="Russian">Русский</li>
-          <li lang="uk" title="Ukrainian">Українська</li>
-          <li lang="pl" title="Polish">Polski</li>
-          <li lang="cs" title="Czech">Čeština</li>
-          <li lang="hu" title="Hungarian">Magyar</li>
-          <li lang="ro" title="Romanian">Română</li>
-          <li lang="el" title="Greek">Ελληνικά</li>
-          <li lang="de" title="German">Deutsch</li>
-          <li lang="fr" title="French">Français</li>
-          <li lang="es" title="Spanish">Español</li>
-          <li lang="pt" title="Portuguese">Português</li>
-          <li lang="it" title="Italian">Italiano</li>
-          <li lang="nl" title="Dutch">Nederlands</li>
-          <li lang="sv" title="Swedish">Svenska</li>
-          <li lang="no" title="Norwegian">Norsk</li>
-          <li lang="da" title="Danish">Dansk</li>
-          <li lang="fi" title="Finnish">Suomi</li>
+          <li><span class="lang-native">English</span></li>
+          <li><span class="lang-native" lang="ko">한국어</span><span class="lang-en">Korean</span></li>
+          <li><span class="lang-native" lang="ja">日本語</span><span class="lang-en">Japanese</span></li>
+          <li><span class="lang-native" lang="zh-Hans">简体中文</span><span class="lang-en">Chinese (Simplified)</span></li>
+          <li><span class="lang-native" lang="zh-Hant">繁體中文</span><span class="lang-en">Chinese (Traditional)</span></li>
+          <li><span class="lang-native" lang="th">ไทย</span><span class="lang-en">Thai</span></li>
+          <li><span class="lang-native" lang="vi">Tiếng Việt</span><span class="lang-en">Vietnamese</span></li>
+          <li><span class="lang-native" lang="id">Bahasa Indonesia</span><span class="lang-en">Indonesian</span></li>
+          <li><span class="lang-native" lang="ms">Bahasa Melayu</span><span class="lang-en">Malay</span></li>
+          <li><span class="lang-native" lang="tl">Filipino</span><span class="lang-en">Tagalog</span></li>
+          <li><span class="lang-native" lang="km">ខ្មែរ</span><span class="lang-en">Khmer</span></li>
+          <li><span class="lang-native" lang="my">မြန်မာ</span><span class="lang-en">Burmese</span></li>
+          <li><span class="lang-native" lang="lo">ລາວ</span><span class="lang-en">Lao</span></li>
+          <li><span class="lang-native" lang="mn">Монгол</span><span class="lang-en">Mongolian</span></li>
+          <li><span class="lang-native" lang="hi">हिन्दी</span><span class="lang-en">Hindi</span></li>
+          <li><span class="lang-native" lang="bn">বাংলা</span><span class="lang-en">Bengali</span></li>
+          <li><span class="lang-native" lang="ur" dir="rtl">اردو</span><span class="lang-en">Urdu</span></li>
+          <li><span class="lang-native" lang="ne">नेपाली</span><span class="lang-en">Nepali</span></li>
+          <li><span class="lang-native" lang="ta">தமிழ்</span><span class="lang-en">Tamil</span></li>
+          <li><span class="lang-native" lang="ar" dir="rtl">العربية</span><span class="lang-en">Arabic</span></li>
+          <li><span class="lang-native" lang="fa" dir="rtl">فارسی</span><span class="lang-en">Persian</span></li>
+          <li><span class="lang-native" lang="he" dir="rtl">עברית</span><span class="lang-en">Hebrew</span></li>
+          <li><span class="lang-native" lang="tr">Türkçe</span><span class="lang-en">Turkish</span></li>
+          <li><span class="lang-native" lang="ru">Русский</span><span class="lang-en">Russian</span></li>
+          <li><span class="lang-native" lang="uk">Українська</span><span class="lang-en">Ukrainian</span></li>
+          <li><span class="lang-native" lang="pl">Polski</span><span class="lang-en">Polish</span></li>
+          <li><span class="lang-native" lang="cs">Čeština</span><span class="lang-en">Czech</span></li>
+          <li><span class="lang-native" lang="hu">Magyar</span><span class="lang-en">Hungarian</span></li>
+          <li><span class="lang-native" lang="ro">Română</span><span class="lang-en">Romanian</span></li>
+          <li><span class="lang-native" lang="el">Ελληνικά</span><span class="lang-en">Greek</span></li>
+          <li><span class="lang-native" lang="de">Deutsch</span><span class="lang-en">German</span></li>
+          <li><span class="lang-native" lang="fr">Français</span><span class="lang-en">French</span></li>
+          <li><span class="lang-native" lang="es">Español</span><span class="lang-en">Spanish</span></li>
+          <li><span class="lang-native" lang="pt">Português</span><span class="lang-en">Portuguese</span></li>
+          <li><span class="lang-native" lang="it">Italiano</span><span class="lang-en">Italian</span></li>
+          <li><span class="lang-native" lang="nl">Nederlands</span><span class="lang-en">Dutch</span></li>
+          <li><span class="lang-native" lang="sv">Svenska</span><span class="lang-en">Swedish</span></li>
+          <li><span class="lang-native" lang="no">Norsk</span><span class="lang-en">Norwegian</span></li>
+          <li><span class="lang-native" lang="da">Dansk</span><span class="lang-en">Danish</span></li>
+          <li><span class="lang-native" lang="fi">Suomi</span><span class="lang-en">Finnish</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- ============ PRIVACY ============ -->
-    <section class="section section-dark" id="privacy">
+    <!-- ============ SECURITY ============
+      Every claim here matches the app's server code (server/encryption.py, auth.py, admin.py and the
+      server README). If the app changes, update this section and the security answers in the FAQ. -->
+    <section class="section section-dark" id="security" aria-labelledby="security-title">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Privacy and control</p>
-          <h2>Your conversations, your rules</h2>
+          <p class="eyebrow">Security</p>
+          <h2 id="security-title">Encrypted on the way. Encrypted at rest.</h2>
+          <p class="section-lede">
+            Every message, translation, photo and file is encrypted while it travels and before it's stored.
+            Here's what happens to a message after you press send.
+          </p>
         </div>
+
+        <ol class="journey" aria-label="What happens to a message after you press send">
+          <li>
+            <span class="journey-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M21 3L10.5 13.5"/><path d="M21 3l-6.5 18-4-7.5L3 9.5 21 3z"/></svg></span>
+            <h3>Sent over HTTPS</h3>
+            <p>Your message leaves your phone or browser over an encrypted connection, so nobody else on your Wi-Fi or network can read it.</p>
+          </li>
+          <li>
+            <span class="journey-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+            <h3>Translated in-house</h3>
+            <p>Oh Chat's own server translates it, on the same machine. It's never sent to an outside translation service or AI company.</p>
+          </li>
+          <li>
+            <span class="journey-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2"/></svg></span>
+            <h3>Encrypted before it's saved</h3>
+            <p>The message, each translation and any photo or file are encrypted with AES-256 before they're stored.</p>
+          </li>
+          <li>
+            <span class="journey-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2c2.9.2 5 2.3 5 5.3"/></svg></span>
+            <h3>Delivered over HTTPS</h3>
+            <p>Everyone in the chat receives it in their own language, over an encrypted connection again.</p>
+          </li>
+        </ol>
+
         <div class="cards cards-dark">
           <article class="card">
-            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
-            <h3>Translated on our own servers</h3>
-            <p>Oh Chat runs its translation AI on its own hardware. Your messages are not sent to an outside translation service.</p>
+            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L20 3M16 7l3 3M14 9l2 2"/></svg>
+            <h3>The key is kept apart</h3>
+            <p>The encryption key is stored separately from your messages. A copy of the database or a backup shows only scrambled text.</p>
+          </article>
+          <article class="card">
+            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.7 12l2.4 2.4 4.3-4.6"/></svg>
+            <h3>Tampering is detected</h3>
+            <p>Each message is sealed to the exact place it's stored. If saved data is altered, swapped or cut short, Oh Chat notices.</p>
+          </article>
+          <article class="card">
+            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg>
+            <h3>Every access is logged</h3>
+            <p>Oh Chat's admin tools list chats without their content. Opening one, for example to look into an abuse report, needs a written reason, recorded before anything is shown.</p>
+          </article>
+          <article class="card">
+            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="3"/><path d="M7 12h.01M10.5 12h.01M14 12h.01M17.5 9.8v4.4"/></svg>
+            <h3>Sign-in that's hard to steal</h3>
+            <p>Passwords are hashed with Argon2, never stored as typed. Sign-in tokens are kept only as hashes, so even a leaked database can't sign anyone in.</p>
+          </article>
+          <article class="card">
+            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="9" y="11.5" width="6" height="4.5" rx="1"/><path d="M10.3 11.5v-1.2a1.7 1.7 0 0 1 3.4 0v1.2"/></svg>
+            <h3>Locked down on your phone</h3>
+            <p>Your sign-in is kept in the phone's secure storage, and Oh Chat can ask for your fingerprint or face before it opens.</p>
           </article>
           <article class="card">
             <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
-            <h3>Choose who can reach you</h3>
-            <p>Let everyone message you, only people in your groups, or nobody new. Block anyone, any time.</p>
-          </article>
-          <article class="card">
-            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-            <h3>Lock the app</h3>
-            <p>On your phone, Oh Chat can ask for your fingerprint or face before it opens.</p>
-          </article>
-          <article class="card">
-            <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><rect x="17" y="8" width="5" height="12" rx="1.2"/></svg>
-            <h3>See every signed-in device</h3>
-            <p>Check where your account is signed in and sign out any device you don't recognise.</p>
+            <h3>You decide who reaches you</h3>
+            <p>Let everyone message you, only people in your groups, or nobody new. Block anyone, and sign out any device you don't recognise.</p>
           </article>
         </div>
+
+        <div class="scope">
+          <div class="scope-col">
+            <h3>Encrypted</h3>
+            <ul class="scope-list scope-yes">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Message text</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Every translation</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Photos and files</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>File names</li>
+            </ul>
+          </div>
+          <div class="scope-col">
+            <h3>Not encrypted</h3>
+            <p class="scope-intro">The server needs these to deliver messages:</p>
+            <ul class="scope-list scope-no">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>Usernames, display names and email addresses</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>Profile pictures</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>Group names and who is in each chat</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>When each message was sent</li>
+            </ul>
+          </div>
+          <div class="scope-col scope-note">
+            <h3>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+              Is Oh Chat end-to-end encrypted?
+            </h3>
+            <p>
+              No. To translate a message, the server has to read it, and end-to-end encryption would prevent that.
+              Instead, messages are encrypted on the way and in storage, and the server decrypts them to translate
+              and deliver them, on Oh Chat's own hardware.
+            </p>
+          </div>
+        </div>
+
+        <details class="tech">
+          <summary>Technical details</summary>
+          <ul>
+            <li><strong>Stored text</strong> (messages, translations and file names): AES-256-GCM with a fresh random 96-bit nonce for every value, bound to where it's stored so it can't be moved to another message unnoticed.</li>
+            <li><strong>Files</strong>: encrypted while they upload, in 64&nbsp;KiB pieces sealed with AES-256-GCM under a key made for that one file (HKDF-SHA256). The last piece is marked, so a shortened or reordered file is rejected.</li>
+            <li><strong>Connections</strong>: HTTPS (TLS) for the web app, the API and the live WebSocket connection.</li>
+            <li><strong>Passwords</strong>: Argon2id. <strong>Sign-in tokens</strong>: 256-bit random values, stored only as SHA-256 hashes and replaced every time they're refreshed. Changing your password signs out your other devices.</li>
+            <li><strong>Sessions</strong>: in the browser, HttpOnly, Secure, SameSite=Strict cookies that page scripts can't read; on phones, the system's secure storage.</li>
+            <li><strong>QR sign-in</strong>: a code alone never signs anyone in. A device that's already signed in has to approve the new one, and each code expires after 2 minutes and works once.</li>
+          </ul>
+        </details>
       </div>
     </section>
 
     <!-- ============ GET THE APP (main call to action) ============ -->
-    <section class="section" id="get">
+    <section class="section" id="get" aria-labelledby="get-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Get Oh Chat</p>
-          <h2>Start chatting on any device</h2>
+          <h2 id="get-title">Start chatting on any device</h2>
           <p class="section-lede">One account, the same chats everywhere. Sign-up is invite-only for now: have your invite code ready.</p>
         </div>
         <div class="get-grid">
@@ -326,6 +486,10 @@
             <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
             <h3>In your browser</h3>
             <p>Open Oh Chat in Chrome, Edge, Safari or Firefox on any computer. Nothing to install.</p>
+            <ul class="get-list">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>The same chats on your phone and computer</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sign in with a passkey or a QR code</li>
+            </ul>
             <a class="btn btn-primary" href="https://chat.rocksontech.com/signup">Join Oh Chat</a>
             <a class="link-quiet" href="https://chat.rocksontech.com/login">I already have an account</a>
           </article>
@@ -333,6 +497,10 @@
             <svg class="icon card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
             <h3>Android</h3>
             <p>Download the app on your phone and open the file. The first time, Android asks you to allow installs from your browser.</p>
+            <div class="get-qr">
+              <img src="assets/img/android-download-qr.svg" width="88" height="88" alt="QR code that downloads the Oh Chat Android app" loading="lazy">
+              <p>On a computer? Scan this with your phone's camera to download the app.</p>
+            </div>
             <a class="btn btn-secondary" href="https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk" download>Download the APK</a>
             <p class="small">Version 1.4.0</p>
           </article>
@@ -346,46 +514,78 @@
       </div>
     </section>
 
-    <!-- ============ FAQ ============ -->
-    <section class="section section-tint" id="faq">
+    <!-- ============ FAQ ============
+      The itemscope/itemprop attributes describe the questions to search engines (schema.org FAQPage).
+      To add a question, copy a whole <details> block, attributes included. -->
+    <section class="section section-tint" id="faq" aria-labelledby="faq-title">
       <div class="container narrow">
         <div class="section-head">
           <p class="eyebrow">FAQ</p>
-          <h2>Questions people ask</h2>
+          <h2 id="faq-title">Questions people ask</h2>
         </div>
-        <div class="faq">
-          <details>
-            <summary>Do I need an invite?</summary>
-            <p>Yes, for now. Oh Chat is invite-only while it grows. Enter the code you received when you create your account.</p>
+        <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">Do I need an invite?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes, for now. Oh Chat is invite-only while it grows. Enter the code you received when you create your account.</p>
+            </div>
           </details>
-          <details>
-            <summary>How good is the translation?</summary>
-            <p>Oh Chat uses a modern AI model that understands context, slang and tone, and keeps names, emoji and links as they are. No translation is perfect, so the exact original is always one tap away.</p>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">How good is the translation?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Oh Chat uses a modern AI model that understands context, slang and tone, and keeps names, emoji and links as they are. No translation is perfect, so the exact original is always one tap away.</p>
+            </div>
           </details>
-          <details>
-            <summary>Can other people see what I originally wrote?</summary>
-            <p>Yes. Anyone in the chat can tap <em>Show original</em> to see your exact words, just as you can with theirs.</p>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">Are my messages encrypted?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes. Messages, translations, photos and files travel over encrypted HTTPS connections, and they're encrypted with AES-256 before they're stored. The key is kept apart from the database, so a copy of it or a backup shows only scrambled text.</p>
+            </div>
           </details>
-          <details>
-            <summary>What happens if I change my language?</summary>
-            <p>Go to Settings, then Profile, and pick a new language. New messages arrive in it right away, and older messages are translated when you scroll back to them.</p>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">Is Oh Chat end-to-end encrypted?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">No. Translation needs the server to read a message, which end-to-end encryption would prevent. Oh Chat translates on its own server, never with an outside service, and opening a chat as an admin takes a written reason that is logged first.</p>
+            </div>
           </details>
-          <details>
-            <summary>Which devices does Oh Chat work on?</summary>
-            <p>Any computer with a modern web browser, and Android phones. An iPhone app is coming. Your chats are the same on every device, and you can sign in on a computer by scanning a QR code with your phone.</p>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">Can other people see what I originally wrote?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Yes. Anyone in the chat can tap <em>Show original</em> to see your exact words, just as you can with theirs.</p>
+            </div>
           </details>
-          <details>
-            <summary>How do I install the Android app?</summary>
-            <p>Download the APK on your phone and open it. When Android asks, allow your browser to install apps, then tap Install. New versions install over the old one, and your chats stay where they are.</p>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">What happens if I change my language?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Go to Settings, then Profile, and pick a new language. New messages arrive in it right away, and older messages are translated when you scroll back to them.</p>
+            </div>
+          </details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">Which devices does Oh Chat work on?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Any computer with a modern web browser, and Android phones. An iPhone app is coming. Your chats are the same on every device, and you can sign in on a computer by scanning a QR code with your phone.</p>
+            </div>
+          </details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">How do I install the Android app?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Download the APK on your phone and open it. When Android asks, allow your browser to install apps, then tap Install. New versions install over the old one, and your chats stay where they are.</p>
+            </div>
+          </details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary itemprop="name">What happens to my messages if I delete my account?</summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <p itemprop="text">Deleting your account permanently removes it, along with the messages and files you sent. Groups that are left with no members are removed too.</p>
+            </div>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ============ FINAL CTA ============ -->
-    <section class="final-cta">
+    <section class="final-cta" aria-labelledby="final-title">
       <div class="container final-inner">
-        <h2>Say it your way. They'll read it theirs.</h2>
+        <h2 id="final-title">Say it your way. They'll read it theirs.</h2>
         <p>Got an invite code? Your first conversation is a minute away.</p>
         <div class="cta-row center">
           <a class="btn btn-light btn-lg" href="https://chat.rocksontech.com/signup">Join Oh Chat</a>
@@ -396,22 +596,47 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand">
-        <picture>
-          <source srcset="assets/img/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
-          <img src="assets/img/logo.svg" alt="" width="28" height="28">
-        </picture>
-        <span>Oh Chat</span>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <picture>
+              <source srcset="assets/img/logo-on-dark.svg" media="(prefers-color-scheme: dark)">
+              <img src="assets/img/logo.svg" alt="" width="30" height="30">
+            </picture>
+            <span>Oh Chat</span>
+          </a>
+          <p>The chat app that translates every message, so everyone reads it in their own language.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div class="footer-col">
+            <p class="footer-title">Oh Chat</p>
+            <ul>
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#languages">Languages</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-title">Get the app</p>
+            <ul>
+              <li><a href="https://chat.rocksontech.com/">Open the web app</a></li>
+              <li><a href="https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk" download>Download for Android</a></li>
+              <li><a href="https://chat.rocksontech.com/signup">Join with an invite</a></li>
+              <li><a href="https://chat.rocksontech.com/login">Sign in</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#languages">Languages</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://chat.rocksontech.com/">Open the web app</a>
-      </nav>
-      <p class="small">© 2026 Oh Chat</p>
+      <div class="footer-bottom">
+        <p>© 2026 Oh Chat</p>
+        <p class="footer-secure">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+          Messages encrypted in transit and at rest
+        </p>
+      </div>
     </div>
   </footer>
 </body>

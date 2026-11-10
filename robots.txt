@@ -1,0 +1,5 @@
+# Oh Chat website (https://oh-chat.rocksontech.com). Everything here is public and may be indexed.
+User-agent: *
+Allow: /
+
+Sitemap: https://oh-chat.rocksontech.com/sitemap.xml
