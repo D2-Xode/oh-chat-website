@@ -14,29 +14,33 @@ static files can host it.
 | `assets/css/style.css` | All styles. Colours match the app (`chat-app/app/src/lib/theme.ts`); light and dark follow the visitor's system setting |
 | `assets/js/main.js` | The hero demo: one group chat shown as each of its four members sees it (English, Korean, Japanese, Spanish) |
 | `assets/img/` | Logo and icons, copied from `chat-app/branding/logo-concepts/` and `chat-app/app/assets/` |
-| `downloads/` | The Android APK goes here. **Not in git** (the file is about 56 MB) |
 
 ## Call-to-action links
 
 | Button | Goes to |
 |---|---|
-| Join Oh Chat | https://oh-chat.rocksontech.com/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
-| Sign in / I already have an account | https://oh-chat.rocksontech.com/login |
-| Download for Android / Download the APK | `downloads/oh-chat.apk` on this website |
+| Join Oh Chat | https://chat.rocksontech.com/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
+| Sign in / I already have an account | https://chat.rocksontech.com/login |
+| Download for Android / Download the APK | https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk |
 | iPhone | "Coming soon" (no link) |
 
 The same list is in a comment at the top of `index.html`. To change a link, search `index.html` for the old address.
 
 ## Android download
 
-Copy the latest APK into `downloads/` under a fixed name, so the links never change:
+The APK (about 56 MB) is too big for git, so it is hosted as a file on a
+[GitHub Release](https://github.com/D2-Xode/oh-chat-website/releases), always named `oh-chat.apk`.
+The source APKs are on the server in `~/ai-server/apk/`.
 
-```bash
-mkdir -p ~/ai-server/oh-chat-website/downloads
-cp ~/ai-server/apk/oh-chat-1.4.0.apk ~/ai-server/oh-chat-website/downloads/oh-chat.apk
-```
+The download buttons use
+`https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk`, which always points to
+the newest release, so the links never need changing.
 
-For a new app version, copy the new APK over it and update "Version 1.4.0" in the "Get Oh Chat" section of `index.html`.
+For a new app version:
+
+1. Create a new release (for example tag `1.5.0.apk`) and upload the APK renamed to `oh-chat.apk`.
+   Do **not** tick "Set as a pre-release": the `latest` link skips pre-releases.
+2. In `index.html`, update "Version 1.4.0" in the "Get Oh Chat" section.
 
 ## Preview on your laptop
 
