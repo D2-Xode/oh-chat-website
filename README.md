@@ -24,8 +24,8 @@ static files can host it.
 
 | Button | Goes to |
 |---|---|
-| Join Olingo Chat | https://chat.rocksontech.com/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
-| Sign in / I already have an account | https://chat.rocksontech.com/login |
+| Join Olingo Chat | https://app.olingo.chat/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
+| Sign in / I already have an account | https://app.olingo.chat/login |
 | Download for Android / Download the APK | https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk |
 | iPhone | "Coming soon" (no link) |
 
@@ -53,7 +53,7 @@ The QR code (`assets/img/android-download-qr.svg`) holds the same `latest` addre
 
 Already in place:
 
-- A descriptive `<title>` and meta description, a canonical address (`https://oh-chat.rocksontech.com/`) and
+- A descriptive `<title>` and meta description, a canonical address (`https://olingo.chat/`) and
   `robots` meta that allows indexing.
 - All text is plain HTML, so crawlers read everything without running JavaScript. The 40 languages are listed
   with their English names too (for searches like "Khmer chat translation").
@@ -61,12 +61,12 @@ Already in place:
   attributes on the questions themselves, so the visible text and the data can't drift apart).
 - `robots.txt` and `sitemap.xml`, link previews (`og:` tags and `og-image.png`), and a real 404 page.
 
-Still to do once, outside this repository (needs the Google account that manages `rocksontech.com`):
+Still to do once, outside this repository (needs the Google account that manages `olingo.chat`):
 
 1. In [Google Search Console](https://search.google.com/search-console), add the **domain property**
-   `rocksontech.com` (or the URL-prefix property `https://oh-chat.rocksontech.com/`). Search Console shows a TXT record:
+   `olingo.chat` (or the URL-prefix property `https://olingo.chat/`). Search Console shows a TXT record:
    add it to the domain's DNS, wait for it to work, then click Verify.
-2. Under **Sitemaps**, submit `https://oh-chat.rocksontech.com/sitemap.xml`.
+2. Under **Sitemaps**, submit `https://olingo.chat/sitemap.xml`.
 3. Under **URL inspection**, enter the home page address and click **Request indexing**.
 4. Optional: do the same in [Bing Webmaster Tools](https://www.bing.com/webmasters) (it can import from Search Console).
 
