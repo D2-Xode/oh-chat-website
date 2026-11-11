@@ -1,6 +1,6 @@
-# Oh Chat website
+# Olingo Chat website
 
-The public website for **Oh Chat**, the messenger that translates every message into each reader's language
+The public website for **Olingo Chat**, the messenger that translates every message into each reader's language
 (the app itself lives in `~/ai-server/chat-app`).
 
 Plain HTML, CSS and JavaScript. There is no build step and nothing to install: any web server that serves
@@ -24,7 +24,7 @@ static files can host it.
 
 | Button | Goes to |
 |---|---|
-| Join Oh Chat | https://chat.rocksontech.com/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
+| Join Olingo Chat | https://chat.rocksontech.com/signup (needs an invite code while Google/Facebook/Apple sign-in is off) |
 | Sign in / I already have an account | https://chat.rocksontech.com/login |
 | Download for Android / Download the APK | https://github.com/D2-Xode/oh-chat-website/releases/latest/download/oh-chat.apk |
 | iPhone | "Coming soon" (no link) |
@@ -45,7 +45,7 @@ For a new app version:
 
 1. Create a new release (for example tag `1.5.0.apk`) and upload the APK renamed to `oh-chat.apk`.
    Do **not** tick "Set as a pre-release": the `latest` link skips pre-releases.
-2. In `index.html`, update "Version 1.4.0" in the "Get Oh Chat" section.
+2. In `index.html`, update "Version 1.4.0" in the "Get Olingo Chat" section.
 
 The QR code (`assets/img/android-download-qr.svg`) holds the same `latest` address, so it never needs changing either.
 
@@ -72,8 +72,8 @@ Still to do once, outside this repository (needs the Google account that manages
 
 When you change the site:
 
-- After editing `style.css` or `main.js`, raise the `?v=2` after their names in `index.html` and `404.html`
-  (`?v=3`, ...), so visitors don't keep an old copy (GitHub Pages lets browsers cache files for 10 minutes).
+- After editing `style.css` or `main.js`, raise the `?v=3` after their names in `index.html` and `404.html`
+  (`?v=4`, ...), so visitors don't keep an old copy (GitHub Pages lets browsers cache files for 10 minutes).
 - When the page's content changes, update `<lastmod>` in `sitemap.xml`.
 - To add an FAQ question, copy a whole `<details>` block including its `itemprop`/`itemscope` attributes.
 - `og-image.png` must stay 1200 × 630 px. Social sites cache previews: after replacing it, refresh them with
@@ -83,8 +83,8 @@ When you change the site:
 
 Every claim in the Security section and the security answers in the FAQ matches the app's server code
 (`chat-app/server/encryption.py`, `auth.py`, `admin.py` and the server README): messages, translations, files and
-file names are encrypted at rest with AES-256-GCM, connections use HTTPS, and translation runs on Oh Chat's own
-server. It also says plainly that Oh Chat is **not** end-to-end encrypted, and what isn't encrypted (names,
+file names are encrypted at rest with AES-256-GCM, connections use HTTPS, and translation runs on Olingo Chat's own
+server. It also says plainly that Olingo Chat is **not** end-to-end encrypted, and what isn't encrypted (names,
 profile pictures, group names, who is in which chat, message times).
 
 Keep it true when the app changes. In particular, if push notifications are added with message text in them

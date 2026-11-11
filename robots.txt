@@ -1,4 +1,4 @@
-# Oh Chat website (https://oh-chat.rocksontech.com). Everything here is public and may be indexed.
+# Olingo Chat website (https://oh-chat.rocksontech.com). Everything here is public and may be indexed.
 User-agent: *
 Allow: /
 

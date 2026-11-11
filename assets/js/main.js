@@ -1,4 +1,4 @@
-// Oh Chat website. Everything on the page works without this file; it adds:
+// Olingo Chat website. Everything on the page works without this file; it adds:
 //   1. the hero demo (one group chat as each member sees it),
 //   2. the header: a shadow once you scroll, and the menu button on small screens,
 //   3. a gentle fade-in for content further down the page.
