@@ -12,12 +12,13 @@ static files can host it.
 |---|---|
 | `index.html` | The whole page: hero with live demo, how it works, translation, features, languages, security, get the app (main call to action), FAQ |
 | `404.html` | Shown by GitHub Pages for any address that doesn't exist (with status 404, so search engines don't index it) |
+| `privacy/`, `terms/`, `delete-account/`, `copyright/` | The legal pages (each an `index.html`, so the addresses are `/privacy/` etc.). See "Legal pages" below |
 | `assets/css/style.css` | All styles. Colours match the app (`chat-app/app/src/lib/theme.ts`); light and dark follow the visitor's system setting |
 | `assets/js/main.js` | The hero demo (one group chat as each of its four members sees it), the menu button on phones, and the fade-in on scroll. The page works without it |
 | `assets/fonts/` | Bricolage Grotesque, the heading font (Latin letters only; everything else uses the system font). Free to use, licence in `OFL.txt` |
 | `assets/img/` | Logo and icons, copied from `chat-app/branding/logo-concepts/` and `chat-app/app/assets/`, plus `og-image.png` (link previews), `logo-512.png` (search engines) and `android-download-qr.svg` (the QR code to the APK, shown on computers) |
 | `favicon.ico` | The 48 px icon, for browsers and tools that ask for `/favicon.ico` directly |
-| `robots.txt`, `sitemap.xml` | Tell search engines they may index everything, and which page to index |
+| `robots.txt`, `sitemap.xml` | Tell search engines they may index everything, and which pages to index |
 | `_config.yml` | Keeps this README off the public website (GitHub Pages publishes every file otherwise) |
 
 ## Call-to-action links
@@ -72,8 +73,8 @@ Still to do once, outside this repository (needs the Google account that manages
 
 When you change the site:
 
-- After editing `style.css` or `main.js`, raise the `?v=3` after their names in `index.html` and `404.html`
-  (`?v=4`, ...), so visitors don't keep an old copy (GitHub Pages lets browsers cache files for 10 minutes).
+- After editing `style.css` or `main.js`, raise the `?v=4` after their names in `index.html`, `404.html` and the
+  four legal pages (`?v=5`, ...), so visitors don't keep an old copy (GitHub Pages lets browsers cache files for 10 minutes).
 - When the page's content changes, update `<lastmod>` in `sitemap.xml`.
 - To add an FAQ question, copy a whole `<details>` block including its `itemprop`/`itemscope` attributes.
 - `og-image.png` must stay 1200 × 630 px. Social sites cache previews: after replacing it, refresh them with
@@ -90,6 +91,24 @@ profile pictures, group names, who is in which chat, message times).
 Keep it true when the app changes. In particular, if push notifications are added with message text in them
 (`PUSH_SHOW_TEXT`), that text passes through Expo, Google and Apple, so update the section and the FAQ.
 
+## Legal pages
+
+| Page | Address | Use it for |
+|---|---|---|
+| Privacy Policy | https://olingo.chat/privacy/ | Facebook Login "Privacy Policy URL", Google Play, App Store |
+| Terms of Service | https://olingo.chat/terms/ | Facebook Login "Terms of Service URL" |
+| Delete your account | https://olingo.chat/delete-account/ | Facebook Login "User data deletion" > "Data deletion instructions URL", Google Play "Delete account URL" |
+| Copyright | https://olingo.chat/copyright/ | Who owns Olingo Chat (RockSon Tech), third-party licences, copyright notices |
+
+The owner (RockSon Tech) and the contact address (support@olingo.chat) appear on all four pages and in the footer.
+That mailbox must exist and be read: deletion requests and copyright notices arrive there.
+
+Like the Security section, the Privacy Policy and the deletion page describe what the app really does (from
+`chat-app/server`: `db.py`, `oauth.py`, `delete_user()` in `main.py`, and the app's Settings screens). Keep them true
+when the app changes, and update "Last updated" on the page and `<lastmod>` in `sitemap.xml`. In particular: push
+notifications, analytics, crash reporting, a new sign-in provider, or a new outside service each need a line in the
+Privacy Policy before they ship.
+
 ## Preview on your laptop
 
 On the server:
@@ -105,6 +124,4 @@ http://localhost:8090 on your laptop. Press Ctrl+C in the terminal to stop the p
 
 ## Not done yet
 
-- A privacy policy page (the Google Play Store and Facebook Login both require one) and terms of service.
-  When they exist, link them in the footer and add them to `sitemap.xml`.
 - Google Search Console verification and sitemap submission (see "Search engines" above).
